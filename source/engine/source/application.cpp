@@ -1,9 +1,12 @@
-#include "include\application.h"
+#include <application.h>
 
 #include <SDL.h>
+#include <logging.h>
 
-bool Application::ProcessEvents(const SDL_Event* inEventPtr)
+bool Application::ProcessEvents(const SDL_Event* inEventPtr) const
 {
+    Logging::Log("Hello world!\n");
+
     if (inEventPtr == nullptr)
     {
         return true;

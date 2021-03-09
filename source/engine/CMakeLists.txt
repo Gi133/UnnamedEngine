@@ -1,17 +1,18 @@
 cmake_minimum_required (VERSION 3.8)
 include(GenerateExportHeader)
 
-set(LIB_NAME enginecore)
+set(LIB_NAME engine)
 
 set(LIB_SOURCE_FILES
-    "enginecore.cpp"
-    "source/logging.cpp"
+    "engine.cpp"
+    "source/application.cpp"
 
-    "enginecore.h"
+    "engine.h"
     "${LIB_NAME}_export.h"
-    "include/logging.h"
-)
+    "include/application.h"
+ )
 
+#add_library(${LIB_NAME} ${LIB_SOURCE_FILES})
 add_library(${LIB_NAME} SHARED ${LIB_SOURCE_FILES})
 
 generate_export_header(${LIB_NAME} 
@@ -26,5 +27,6 @@ target_include_directories(${LIB_NAME}
 
 target_link_libraries(${LIB_NAME}
     PUBLIC
-        SDL2
+        SDL2main
+        enginecore
 )
