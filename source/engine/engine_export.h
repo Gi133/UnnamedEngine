@@ -9,10 +9,10 @@
 #  ifndef ENGINE_EXPORT
 #    ifdef engine_EXPORTS
         /* We are building this library */
-#      define ENGINE_EXPORT __declspec(dllexport)
+#      define ENGINE_EXPORT 
 #    else
         /* We are using this library */
-#      define ENGINE_EXPORT __declspec(dllimport)
+#      define ENGINE_EXPORT 
 #    endif
 #  endif
 

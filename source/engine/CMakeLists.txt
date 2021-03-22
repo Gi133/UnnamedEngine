@@ -9,11 +9,12 @@ set(LIB_SOURCE_FILES
 
     "engine.h"
     "${LIB_NAME}_export.h"
-    "include/application.h"
+    "include/engine/application.h"
  )
 
-#add_library(${LIB_NAME} ${LIB_SOURCE_FILES})
-add_library(${LIB_NAME} SHARED ${LIB_SOURCE_FILES})
+add_library(${LIB_NAME} ${LIB_SOURCE_FILES})
+#add_library(${LIB_NAME} SHARED ${LIB_SOURCE_FILES})
+add_library(UnnamedEngine::${LIB_NAME} ALIAS ${LIB_NAME})
 
 generate_export_header(${LIB_NAME} 
     EXPORT_FILE_NAME ${CMAKE_CURRENT_SOURCE_DIR}/${LIB_NAME}_export.h
@@ -21,7 +22,7 @@ generate_export_header(${LIB_NAME}
 
 target_include_directories(${LIB_NAME}
     PUBLIC
-        "include"
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/"
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 

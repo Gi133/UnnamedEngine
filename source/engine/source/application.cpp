@@ -1,7 +1,7 @@
-#include <application.h>
+#include <engine/application.h>
 
 #include <SDL.h>
-#include <logging.h>
+#include <enginecore/logging.h>
 
 bool Application::ProcessEvents(const SDL_Event* inEventPtr) const
 {

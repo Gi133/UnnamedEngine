@@ -9,10 +9,10 @@
 #  ifndef ENGINECORE_EXPORT
 #    ifdef enginecore_EXPORTS
         /* We are building this library */
-#      define ENGINECORE_EXPORT __declspec(dllexport)
+#      define ENGINECORE_EXPORT 
 #    else
         /* We are using this library */
-#      define ENGINECORE_EXPORT __declspec(dllimport)
+#      define ENGINECORE_EXPORT 
 #    endif
 #  endif
 
