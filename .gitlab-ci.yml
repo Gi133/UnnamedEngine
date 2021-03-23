@@ -1,0 +1,25 @@
+image: gcc
+
+stages:
+  - Analysis
+  - Build
+
+before_script:
+  - apt-get update --yes
+  - apt-get install --yes cmake
+
+clang-format:
+    stage: Analysis
+    script:
+        - clang-format --version
+        - clang-format -i $(find . -name "*.c")
+        - clang-format -i $(find . -name "*.cpp")
+        - clang-format -i $(find . -name "*.h")
+        - clang-format -i $(find . -name "*.hpp")
+        - git diff --exit-code
+
+build:
+    stage: Build
+    script:
+        - mkdir build
+        - cmake
