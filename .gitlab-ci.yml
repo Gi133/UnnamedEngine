@@ -6,6 +6,9 @@ stages:
   - Analysis
   - Build
 
+before_script:
+    - choco install llvm
+
 clang-format:
     stage: Analysis
     script:
