@@ -1,7 +1,6 @@
-.shared_windows_runners:
+default:
   tags:
-  - shared-windows
-  - windows
+  - square_windows
 
 stages:
   - Analysis
