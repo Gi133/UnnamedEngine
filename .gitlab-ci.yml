@@ -5,8 +5,12 @@ default:
 stages:
   - Build
 
+before_script:
+  - choco install llvm -y
+  - refreshenv
+
 build:
-    stage: Build
-    script:
-        - mkdir build
-        - cmake
+  stage: Build
+  script:
+    - mkdir build
+    - cmake
