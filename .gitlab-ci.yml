@@ -3,21 +3,7 @@ default:
   - square_windows
 
 stages:
-  - Analysis
   - Build
-
-before_script:
-    - choco install llvm -y
-
-clang-format:
-    stage: Analysis
-    script:
-        - clang-format --version
-        - clang-format -i $(find . -name "*.c")
-        - clang-format -i $(find . -name "*.cpp")
-        - clang-format -i $(find . -name "*.h")
-        - clang-format -i $(find . -name "*.hpp")
-        - git diff --exit-code
 
 build:
     stage: Build
